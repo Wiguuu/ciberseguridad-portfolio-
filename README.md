@@ -28,7 +28,7 @@ Proyecto de portafolio: sitio web informativo, moderno y responsivo sobre cibers
 2. Abre `index.html` en tu navegador
 
 ## Autor
-Tu Nombre
+Willy González
 
 ## Imágenes recomendadas
 Coloca imágenes libres de derechos en la carpeta `img/`:
