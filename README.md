@@ -30,6 +30,27 @@ Proyecto de portafolio: sitio web informativo, moderno y responsivo sobre cibers
 ## Autor
 Tu Nombre
 
+## Imágenes recomendadas
+Coloca imágenes libres de derechos en la carpeta `img/`:
+- `hero-cybersecurity.jpg` (portada)
+- `phishing.jpg` (phishing)
+- `ransomware.jpg` (ransomware)
+- `malware.jpg` (malware)
+- `ddos.jpg` (DDoS)
+
+Puedes obtener imágenes en Unsplash, Pexels o Pixabay buscando "cybersecurity", "phishing", etc.
+
+## Accesibilidad y buenas prácticas
+- Navegación accesible con roles y etiquetas ARIA.
+- Contraste alto y fuente legible.
+- Interactividad accesible por teclado.
+
+## Personalización
+- Cambia tu nombre y correo en el footer de `index.html`.
+- Agrega o reemplaza imágenes según tu estilo.
+
 ---
 
 > Proyecto para portafolio profesional. ¡Personaliza y amplía según tus necesidades!
+
+> ¡Listo para tu portafolio profesional!

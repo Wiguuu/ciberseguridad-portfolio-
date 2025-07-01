@@ -1,9 +1,10 @@
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
   background-color: #f8f9fa;
+  color: #222;
 }
 .hero {
-  background: linear-gradient(135deg, #0d6efd 60%, #212529 100%);
+  background: linear-gradient(135deg, hsl(216, 98%, 52%) 60%, #212529 100%);
 }
 footer {
   font-size: 0.95rem;
@@ -21,4 +22,101 @@ footer {
 }
 .modal-content {
   border-radius: 1rem;
+}
+.navbar-brand, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+.btn-light {
+  color: #0d6efd;
+  border: 1px solid #0d6efd;
+}
+.btn-light:hover {
+  background: #0d6efd;
+  color: #fff;
+}
+.list-group-item {
+  border: none;
+  border-bottom: 1px solid #e9ecef;
+}
+.list-group-item:last-child {
+  border-bottom: none;
+}
+.hero-heroimg {
+  background: linear-gradient(135deg, rgba(13,110,253,0.7) 60%, rgba(33,37,41,0.7) 100%), url('../img/hero-cybersecurity.jpg') center center/cover no-repeat;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.hero-heroimg .container {
+  position: relative;
+  z-index: 2;
+}
+.hero-heroimg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(13,110,253,0.7) 60%, rgba(33,37,41,0.7) 100%);
+  z-index: 1;
+}
+.cta-btns .btn {
+  min-width: 220px;
+  font-size: 1.2rem;
+}
+@media (max-width: 767px) {
+  .hero img { max-width: 90vw; }
+  .display-4 { font-size: 2.2rem; }
+  .hero-heroimg { min-height: 260px; }
+  .cta-btns .btn { min-width: 140px; font-size: 1rem; }
+}
+
+/* Tema oscuro */
+.theme-dark {
+  background: #181a1b !important;
+  color: #f1f3f4 !important;
+}
+.theme-dark .navbar,
+.theme-dark .bg-dark,
+.theme-dark footer {
+  background: #23272b !important;
+}
+.theme-dark .card {
+  background: #23272b;
+  color: #f1f3f4;
+  border-color: #343a40;
+}
+.theme-dark .list-group-item {
+  background: #23272b;
+  color: #f1f3f4;
+  border-bottom: 1px solid #343a40;
+}
+.theme-dark .btn-light {
+  background: #343a40;
+  color: #f1f3f4;
+  border-color: #f1f3f4;
+}
+.theme-dark .btn-outline-light {
+  color: #f1f3f4;
+  border-color: #f1f3f4;
+}
+.theme-dark .carousel-caption {
+  background: rgba(33,37,41,0.85) !important;
+}
+.theme-dark .modal-content {
+  background: #23272b;
+  color: #f1f3f4;
+}
+.theme-dark .form-control {
+  background: #23272b;
+  color: #f1f3f4;
+  border-color: #343a40;
+}
+.theme-dark .form-control:focus {
+  background: #181a1b;
+  color: #fff;
+}
+.theme-dark .alert {
+  background: #23272b;
+  color: #f1f3f4;
+  border-color: #343a40;
 }

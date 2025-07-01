@@ -27,12 +27,16 @@
               <a class="nav-link active" href="consejos.html">Consejos de Seguridad</a>
             </li>
           </ul>
+          <button id="toggle-theme" class="btn btn-outline-light ms-3" title="Cambiar modo día/noche" aria-label="Cambiar modo día/noche">
+            <i class="bi bi-moon"></i>
+          </button>
         </div>
       </div>
     </nav>
 
     <section class="container my-5">
       <h2>Consejos de Seguridad</h2>
+      <p class="mb-4">Sigue estas buenas prácticas para proteger tu información y navega con confianza. ¿Tienes dudas? ¡Contáctanos o realiza el test de seguridad!</p>
       <ul class="list-group mb-4">
         <li class="list-group-item">Utiliza contraseñas seguras y únicas para cada cuenta.</li>
         <li class="list-group-item">Activa la autenticación en dos pasos siempre que sea posible.</li>
@@ -79,11 +83,33 @@
     </section>
 
     <footer class="bg-dark text-white text-center py-3">
-      <small>&copy; 2025 Tu Nombre. Proyecto de Portafolio - Ciberseguridad.</small>
+      <small>&copy; 2025 Willy González. Proyecto de Portafolio - Ciberseguridad.</small>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <script src="js/consejos.js"></script>
+    <script>
+      // Botón de modo día/noche
+      $(function() {
+        function setTheme(dark) {
+          if (dark) {
+            $("body").addClass("theme-dark");
+            $("#toggle-theme i").removeClass("bi-moon").addClass("bi-sun");
+          } else {
+            $("body").removeClass("theme-dark");
+            $("#toggle-theme i").removeClass("bi-sun").addClass("bi-moon");
+          }
+        }
+        const darkPref = localStorage.getItem('theme-dark') === 'true';
+        setTheme(darkPref);
+        $("#toggle-theme").on('click', function() {
+          const isDark = !$('body').hasClass('theme-dark');
+          setTheme(isDark);
+          localStorage.setItem('theme-dark', isDark);
+        });
+      });
+    </script>
 </body>
 </html>

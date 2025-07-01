@@ -30,17 +30,19 @@
               <a class="nav-link" href="consejos.html">Consejos de Seguridad</a>
             </li>
           </ul>
+          <button id="toggle-theme" class="btn btn-outline-light ms-3" title="Cambiar modo día/noche" aria-label="Cambiar modo día/noche">
+            <i class="bi bi-moon"></i>
+          </button>
         </div>
       </div>
     </nav>
 
     <!-- Imagen destacada y CTA -->
-    <header class="hero bg-primary text-white text-center py-5">
-      <div class="container">
+    <header class="hero-heroimg text-white text-center py-5">
+      <div class="container position-relative">
         <h1 class="display-4 fw-bold">¡Protege tu mundo digital!</h1>
         <p class="lead">La ciberseguridad es responsabilidad de todos. Aprende a identificar amenazas y a proteger tu información personal y profesional.</p>
-        <img src="img/hero-cybersecurity.jpg" alt="Ilustración de ciberseguridad: escudo y dispositivos protegidos" class="img-fluid rounded shadow mt-4 mb-4" style="max-width: 420px;">
-        <div>
+        <div class="cta-btns d-flex flex-column flex-md-row justify-content-center align-items-center gap-3 mt-4">
           <a href="consejos.html" class="btn btn-light btn-lg fw-semibold shadow-sm">Empieza a protegerte</a>
         </div>
       </div>
@@ -93,14 +95,43 @@
           <a href="#" class="text-white me-3" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
           <a href="#" class="text-white" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
         </div>
-        <small>&copy; 2025 <span id="autor">Willy Gutiérrez</span>. Proyecto de Portafolio - Ciberseguridad.<br>
-        <a href="mailto:willygutierrez@email.com" class="text-info text-decoration-none">Contacto</a></small>
+        <small>&copy; 2025 <span id="autor">Willy González</span>. Proyecto de Portafolio - Ciberseguridad.<br>
+        <a href="mailto:willy.gubal@gmail.com" class="text-info text-decoration-none">Contacto</a></small>
       </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <script src="js/main.js"></script>
+    <script>
+      // Accesibilidad: scroll al contenido principal
+      $(function() {
+        $(".navbar-nav .nav-link").on('click', function(e) {
+          if (this.hash) {
+            e.preventDefault();
+            $('html, body').animate({ scrollTop: $(this.hash).offset().top }, 600);
+          }
+        });
+        // Botón de modo día/noche
+        function setTheme(dark) {
+          if (dark) {
+            $("body").addClass("theme-dark");
+            $("#toggle-theme i").removeClass("bi-moon").addClass("bi-sun");
+          } else {
+            $("body").removeClass("theme-dark");
+            $("#toggle-theme i").removeClass("bi-sun").addClass("bi-moon");
+          }
+        }
+        const darkPref = localStorage.getItem('theme-dark') === 'true';
+        setTheme(darkPref);
+        $("#toggle-theme").on('click', function() {
+          const isDark = !$('body').hasClass('theme-dark');
+          setTheme(isDark);
+          localStorage.setItem('theme-dark', isDark);
+        });
+      });
+    </script>
 </body>
 </html>

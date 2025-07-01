@@ -5,7 +5,7 @@ const amenazas = [
   {
     nombre: 'Phishing',
     descripcion: 'Intento de engañar a las personas para obtener información confidencial mediante correos o sitios falsos.',
-    imagen: 'img/phishing.jpg',
+    imagen: 'img/phishing.png', // Cambiado a png
     ejemplo: 'Caso: En 2020, usuarios de bancos recibieron correos falsos solicitando datos de acceso.'
   },
   {
@@ -33,7 +33,7 @@ $(function() {
   amenazas.forEach((a, i) => {
     $('#threat-cards').append(`
       <div class="col-md-6 col-lg-3 mb-4">
-        <div class="card h-100 shadow-sm">
+        <div class="card h-100 shadow-sm threat-card" tabindex="0" role="button" data-ejemplo="${a.ejemplo}">
           <img src="${a.imagen}" class="card-img-top" alt="${a.nombre}">
           <div class="card-body">
             <h5 class="card-title">${a.nombre}</h5>
@@ -42,6 +42,17 @@ $(function() {
         </div>
       </div>
     `);
+  });
+
+  // Interactividad: mostrar ejemplo real al hacer clic
+  $(document).on('click keypress', '.threat-card', function(e) {
+    if (e.type === 'click' || e.key === 'Enter') {
+      const ejemplo = $(this).data('ejemplo');
+      $(this).find('.card-text').html(`<strong>${ejemplo}</strong>`);
+      setTimeout(() => {
+        $(this).find('.card-text').html(amenazas[$(this).index()].descripcion);
+      }, 4000);
+    }
   });
 
   // Generar carrusel
