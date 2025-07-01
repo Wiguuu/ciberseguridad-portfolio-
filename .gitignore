@@ -1,0 +1,6 @@
+# Node, macOS y editores
+node_modules/
+.DS_Store
+*.log
+.env
+.vscode/
